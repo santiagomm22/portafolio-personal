@@ -1,33 +1,37 @@
 const HeroText = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Elemento decorativo en la parte superior */}
-      <div className="flex justify-center items-center pt-8">
-        <span className="text-lg md:text-xl  tracking-widest font-medium text-gray-300">
-          &lt;
-        </span>
-        <span className="text-lg md:text-xl  tracking-widest font-medium text-violet-600">
-          SantiagoMendoza
-        </span>
-        <span className="text-lg md:text-xl  tracking-widest font-medium text-yellow-500">
-          /
-        </span>
-        <span className="text-lg md:text-xl  tracking-widest font-medium text-gray-300">
-          &gt;
-        </span>
-      </div>
+    <div className="min-h-screen flex items-center px-6 pt-16 md:pt-0">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-16 md:items-center">
+        {/* Texto */}
+        <div className="text-center md:text-left md:self-end md:pb-30">
+          <h1 className="text-6xl md:text-8xl font-bold uppercase text-white mb-6">
+            SANTIAGO MENDOZA
+          </h1>
+          <p className="text-xl uppercase tracking-widest text-gray-300">
+            DESARROLLADOR FRONT-END & BACK-END
+          </p>
+        </div>
 
-      {/* Contenedor para el título y subtítulo centrados */}
-      <div className="flex-grow flex flex-col justify-center items-center text-center">
-        {/* Título principal en grande */}
-        <h1 className="text-6xl md:text-8xl font-bold tracking-wider mb-6 uppercase text-white">
-          SANTIAGO MENDOZA
-        </h1>
-
-        {/* Subtítulo */}
-        <p className="text-lg md:text-xl uppercase tracking-widest font-medium text-gray-300">
-          DESARROLLADOR FRONT-END & BACK-END
-        </p>
+        {/* Imágenes */}
+        <div className="space-y-4">
+          <img
+            src="https://th.bing.com/th/id/OIP.-L6-_RP_iqao2xlw6aKcOQHaD4?w=304&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            alt="Paisaje montañoso"
+            className="w-full h-80 object-cover rounded-lg"
+          />
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="https://th.bing.com/th/id/OIP.-L6-_RP_iqao2xlw6aKcOQHaD4?w=304&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+              alt="Sendero forestal"
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <img
+              src="https://th.bing.com/th/id/OIP.-L6-_RP_iqao2xlw6aKcOQHaD4?w=304&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+              alt="Cascada"
+              className="w-full h-48 object-cover rounded-lg"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
