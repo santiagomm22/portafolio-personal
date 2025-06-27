@@ -1,14 +1,15 @@
+// src/App.tsx
 import "./App.css";
-import PurpleGradientBackground from "./components/fondo-app/PurpleGradientBackground";
+import ParticlesBackground from "./components/fondo-app/ParticlesBackground";
 import HeroText from "./components/hero-inicial/HeroText";
-// import CardsLayout from "./components/cards/CardsLayout";
+import CardsLayout from "./components/cards/CardsLayout";
 
 function App() {
   return (
-    <PurpleGradientBackground intensity="strong">
+    <ParticlesBackground>
       <HeroText />
-      {/* <CardsLayout /> */}
-    </PurpleGradientBackground>
+      <CardsLayout />
+    </ParticlesBackground>
   );
 }
 
