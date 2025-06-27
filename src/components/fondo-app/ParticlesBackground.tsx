@@ -56,7 +56,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
               },
               bubble: {
                 distance: 250, // Distancia del efecto burbuja
-                size: 25, // Tamaño máximo de la burbuja
+                size: 35, // Tamaño máximo de la burbuja
                 duration: 0.3, // Duración del efecto
                 opacity: 1.5,
                 speed: 3,
@@ -65,7 +65,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
           },
           particles: {
             color: {
-              value: ["#8B5CF6", "#A855F7", "#C084FC", "#DDD6FE"], // Colores púrpura/violeta
+              value: ["#8B5CF6", "#A855F7", "#8135cd", "#4829db"], // Colores púrpura/violeta
             },
             links: {
               color: "#8B5CF6",
