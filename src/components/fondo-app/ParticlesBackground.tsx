@@ -37,7 +37,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
               value: "#000000", // Fondo negro
             },
           },
-          fpsLimit: 120, // Límite de FPS para rendimiento
+          fpsLimit: 100, // Límite de FPS para rendimiento
           interactivity: {
             events: {
               onClick: {
