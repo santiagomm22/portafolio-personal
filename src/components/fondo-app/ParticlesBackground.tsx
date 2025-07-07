@@ -37,12 +37,12 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
               value: "#000000", // Fondo negro
             },
           },
-          fpsLimit: 100, // Límite de FPS para rendimiento
+          fpsLimit: 120, // Límite de FPS para rendimiento
           interactivity: {
             events: {
               onClick: {
                 enable: true,
-                mode: "push", // Agrega partículas al hacer clic
+                mode: "repulse", // Agrega partículas al hacer clic
               },
               onHover: {
                 enable: true,
@@ -81,7 +81,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
                 default: "bounce",
               },
               random: false,
-              speed: 1.5, // Velocidad suave
+              speed: 2, // Velocidad suave
               straight: false,
             },
             number: {
