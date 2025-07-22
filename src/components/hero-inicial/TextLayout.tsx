@@ -22,7 +22,6 @@ const CornerTextLayout = () => {
           </div>
         </div>
       </div>
-
       {/* MetaBalls Centrados */}
       <div className="flex items-center justify-center min-h-screen p-4">
         <div className="w-full max-w-8xl aspect-square max-h-[90vh] flex items-center justify-center">
@@ -43,7 +42,6 @@ const CornerTextLayout = () => {
           />
         </div>
       </div>
-
       {/* Texto Inferior Izquierda - Desktop */}
       <div className="hidden md:block absolute bottom-6 left-6 md:bottom-12 md:left-12 z-10">
         <div className="text-white max-w-md">
@@ -62,9 +60,8 @@ const CornerTextLayout = () => {
           </div>
         </div>
       </div>
-
       {/* Texto Inferior - Móvil (al final de la página) */}
-      <div className="md:hidden mt-8 px-6 pb-12">
+      <div className="md:hidden px-6 pb-4 absolute bottom-2 w-full">
         <div className="text-white">
           <p className="text-lg leading-relaxed text-center">
             <span className="text-purple-300">UI Engineer</span> who dips his
@@ -81,16 +78,7 @@ const CornerTextLayout = () => {
           </div>
         </div>
       </div>
-
-      {/* Enlaces de navegación - Esquina superior derecha */}
-      {/* <div className="absolute top-6 right-6 md:top-12 md:right-12 z-10">
-        <div className="text-white text-right text-sm font-mono space-y-2">
-          <div>Github</div>
-          <div>LinkedIn</div>
-          <div>Twitter / X</div>
-          <div>Email</div>
-        </div>
-      </div> */}
+      ;
     </div>
   );
 };

@@ -2,7 +2,7 @@ import DecryptedText from "@/components/ui/DecryptedText";
 
 const HeroText = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col z-10">
       {/* Contenedor para el título y subtítulo centrados */}
       <div className="flex-grow flex flex-col justify-center items-center text-center">
         {/* Título principal en grande */}
