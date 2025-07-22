@@ -83,14 +83,14 @@ const CornerTextLayout = () => {
       </div>
 
       {/* Enlaces de navegación - Esquina superior derecha */}
-      <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 z-10">
+      {/* <div className="absolute top-6 right-6 md:top-12 md:right-12 z-10">
         <div className="text-white text-right text-sm font-mono space-y-2">
           <div>Github</div>
           <div>LinkedIn</div>
           <div>Twitter / X</div>
           <div>Email</div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
