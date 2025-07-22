@@ -12,15 +12,15 @@ const HeroText = () => {
 
         {/* Subtítulo */}
         <p className="text-lg md:text-xl uppercase tracking-widest font-medium text-gray-300">
-        <DecryptedText 
-          text="DESARROLLADOR FRONT-END & BACK-END"
-          className="text-lg md:text-xl uppercase tracking-widest font-medium text-gray-300"
-          animateOn="view"
-          speed={80}
-          maxIterations={15}
-          sequential={true}
-          revealDirection="start"
-        />
+          <DecryptedText
+            text="DESARROLLADOR FRONT-END & BACK-END"
+            className="text-lg md:text-xl uppercase tracking-widest font-medium text-gray-300"
+            animateOn="view"
+            speed={80}
+            maxIterations={15}
+            sequential={true}
+            revealDirection="start"
+          />
         </p>
       </div>
     </div>
