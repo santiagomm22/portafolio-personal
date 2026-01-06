@@ -13,7 +13,7 @@ const HeroText = () => {
         {/* Subtítulo */}
         <p className="text-lg md:text-xl uppercase tracking-widest font-medium text-gray-300">
           <DecryptedText
-            text="DESARROLLADOR FRONT-END & BACK-END"
+            text="DESARROLLADOR FRONT-END Y BACK-END"
             className="text-lg md:text-xl uppercase tracking-widest font-medium text-gray-300"
             animateOn="view"
             speed={80}

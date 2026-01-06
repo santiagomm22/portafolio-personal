@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Betron';
+  src: url('/fonts/Betron Personal Use Only.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -116,5 +124,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Betron', sans-serif;
   }
 }
