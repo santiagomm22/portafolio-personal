@@ -1,4 +1,3 @@
-// src/components/particles/ParticlesBackground.tsx
 import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
@@ -8,152 +7,94 @@ interface ParticlesBackgroundProps {
   children: React.ReactNode;
 }
 
-const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
-  children,
-}) => {
+const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ children }) => {
   const particlesInit = useCallback(async (engine: Engine) => {
-    // Carga solo las características necesarias para optimizar rendimiento
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      // Opcional: callback cuando las partículas están cargadas
-      console.log("Partículas cargadas", container);
-    },
-    []
-  );
+  const particlesLoaded = useCallback(async (_container: Container | undefined) => {}, []);
 
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden">
-      {/* Componente de partículas como fondo */}
+    <div className="relative min-h-screen overflow-x-hidden" style={{ background: "var(--bg)" }}>
+      {/* Animated gradient orbs — behind particles */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        <div className="orb orb-1" />
+        <div className="orb orb-2" />
+        <div className="orb orb-3" />
+        <div className="orb orb-4" />
+      </div>
+
+      {/* Particles canvas */}
       <Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
+        className="fixed inset-0"
+        style={{ zIndex: 1 }}
         options={{
-          background: {
-            color: {
-              value: "#150025", // Fondo negro
-            },
-          },
-          fpsLimit: 120, // Límite de FPS para rendimiento
+          background: { color: { value: "transparent" } },
+          fpsLimit: 90,
           interactivity: {
             events: {
-              onClick: {
-                enable: true,
-                mode: "repulse", // Agrega partículas al hacer clic
-              },
-              onHover: {
-                enable: true,
-                mode: "bubble", // Efecto burbuja al pasar el mouse
-              },
+              onClick: { enable: true, mode: "repulse" },
+              onHover: { enable: true, mode: "grab" },
               resize: true,
             },
             modes: {
-              push: {
-                quantity: 4, // Cantidad de partículas añadidas por clic
-              },
-              bubble: {
-                distance: 250, // Distancia del efecto burbuja
-                size: 35, // Tamaño máximo de la burbuja
-                duration: 0.3, // Duración del efecto
-                opacity: 1.5,
-                speed: 3,
-              },
+              repulse: { distance: 120, duration: 0.4 },
+              grab: { distance: 180, links: { opacity: 0.5 } },
             },
           },
           particles: {
-            color: {
-              value: ["#8B5CF6", "#A855F7", "#8135cd", "#4829db"], // Colores púrpura/violeta
-            },
+            color: { value: ["#7c3aed", "#a855f7", "#c084fc", "#4f46e5"] },
             links: {
-              color: "#8B5CF6",
-              distance: 150,
+              color: "#7c3aed",
+              distance: 140,
               enable: true,
-              opacity: 0.3,
+              opacity: 0.18,
               width: 1,
             },
             move: {
               direction: "none",
               enable: true,
-              outModes: {
-                default: "bounce",
-              },
-              random: false,
-              speed: 2, // Velocidad suave
+              outModes: { default: "bounce" },
+              random: true,
+              speed: 0.9,
               straight: false,
             },
             number: {
-              density: {
-                enable: true,
-                area: 800,
-              },
-              value: 80, // Cantidad de partículas (ajustable según rendimiento)
+              density: { enable: true, area: 900 },
+              value: 60,
             },
             opacity: {
-              value: 0.7,
-              random: {
-                enable: true,
-                minimumValue: 0.3,
-              },
+              value: 0.5,
+              random: { enable: true, minimumValue: 0.15 },
             },
-            shape: {
-              type: "circle",
-            },
+            shape: { type: "circle" },
             size: {
-              value: { min: 1, max: 5 },
-              random: {
-                enable: true,
-                minimumValue: 1,
-              },
+              value: { min: 1, max: 3 },
+              random: { enable: true, minimumValue: 1 },
             },
           },
-          detectRetina: true, // Soporte para pantallas retina
-          // Configuración responsive
+          detectRetina: true,
           responsive: [
             {
               maxWidth: 768,
               options: {
                 particles: {
-                  number: {
-                    value: 50, // Menos partículas en móviles
-                  },
-                  links: {
-                    distance: 120,
-                  },
-                },
-                interactivity: {
-                  modes: {
-                    bubble: {
-                      distance: 100,
-                      size: 20,
-                    },
-                  },
-                },
-              },
-            },
-            {
-              maxWidth: 480,
-              options: {
-                particles: {
-                  number: {
-                    value: 70, // Aún menos partículas en móviles pequeños
-                  },
-                  links: {
-                    distance: 250,
-                    enable: true, // Desactivar líneas en móviles muy pequeños
-                  },
+                  number: { value: 35 },
+                  links: { distance: 110 },
                 },
               },
             },
           ],
         }}
-        className="absolute inset-0 z-0"
       />
 
-      {/* Contenido de la aplicación */}
-      <div className="relative z-10">{children}</div>
+      {/* Page content */}
+      <div className="relative" style={{ zIndex: 2 }}>
+        {children}
+      </div>
     </div>
   );
 };
