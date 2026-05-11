@@ -94,8 +94,7 @@ const Hero = () => {
         >
           Desarrollador Fullstack autodidacta con experiencia en entornos empresariales reales.
           Especializado en <span style={{ color: "var(--purple-light)" }}>React</span> y{" "}
-          <span style={{ color: "var(--purple-light)" }}>NestJS</span>. Apasionado por
-          construir soluciones escalables y centradas en el usuario.
+          <span style={{ color: "var(--purple-light)" }}>NestJS</span>. Enfocado en diseñar soluciones escalables y centradas en el usuario.
         </motion.p>
 
         {/* CTA buttons */}
