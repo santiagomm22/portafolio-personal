@@ -58,9 +58,14 @@ const Navbar = () => {
         {/* Logo */}
         <button
           onClick={() => handleLink("inicio")}
-          className="font-betron text-xl font-bold text-white tracking-widest transition-colors duration-200 hover:text-purple-400"
+          className="transition-opacity duration-200 hover:opacity-75"
+          aria-label="Inicio"
         >
-          SM<span style={{ color: "var(--purple)" }}>.</span>
+          <img
+            src="/images/iconoS.webp"
+            alt="Logo"
+            className="h-8 w-auto"
+          />
         </button>
 
         {/* Desktop links */}
